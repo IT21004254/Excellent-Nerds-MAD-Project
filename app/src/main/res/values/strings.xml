@@ -38,20 +38,20 @@
     <string name="cancel_booking">cancel booking</string>
     <string name="Return_to_home">Return to home</string>
 
-    <array name = "location">
+    <array name="location">
         <item>""</item>
-        <item> Colombo </item>
-        <item> Negombo </item>
-        <item> Kaduwela </item>
-        <item> Kandy </item>
+        <item>Colombo</item>
+        <item>Negombo</item>
+        <item>Kaduwela</item>
+        <item>Kandy</item>
     </array>
 
-    <array name = "time">
+    <array name="time">
         <item>""</item>
-        <item> 10.30 A.M </item>
-        <item> 1.30 P.M </item>
-        <item> 3.30 P.M </item>
-        <item> 6.00 P.M </item>
+        <item>10.30 A.M</item>
+        <item>1.30 P.M</item>
+        <item>3.30 P.M</item>
+        <item>6.00 P.M</item>
     </array>
 
 </resources>

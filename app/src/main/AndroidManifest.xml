@@ -13,6 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment"
         tools:targetApi="31">
+        <activity
+            android:name=".WelcomePage"
+            android:exported="false" />
+        <activity
+            android:name=".ECGTest"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/actions" />

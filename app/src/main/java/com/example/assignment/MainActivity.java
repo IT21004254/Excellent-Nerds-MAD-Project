@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner Location,Time;
     Button book;
     Client client;
+    String datepass, timepass, locationpass;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -99,6 +101,18 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this,"Please Enter Time", Toast.LENGTH_LONG).show();
                 }
+
+                Intent intent = new Intent (MainActivity.this,ECGTest.class);
+                datepass = date.getText().toString();
+                timepass = Time.getSelectedItem().toString();
+                locationpass = Location.getSelectedItem().toString();
+                intent.putExtra("Value",datepass);
+                intent.putExtra("TimeValue",timepass);
+                intent.putExtra("LocationValue",locationpass);
+                startActivity(intent);
+                finish();
+
+
 
             }
     });
