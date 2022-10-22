@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1076909119198",
+    "firebase_url": "https://excellent-nerds-mad-project-default-rtdb.firebaseio.com",
+    "project_id": "excellent-nerds-mad-project",
+    "storage_bucket": "excellent-nerds-mad-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076909119198:android:5cf3a641dee3040b0b944f",
+        "android_client_info": {
+          "package_name": "com.example.assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076909119198-k8k0gpeuv769hu1fbrdth32b1f55qvou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqxrFiSKg-6G_Tc6R36br_xYuSK_f09aI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076909119198-k8k0gpeuv769hu1fbrdth32b1f55qvou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

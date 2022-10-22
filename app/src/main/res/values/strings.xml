@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Medi - Agent </string>
+    <string name="Lab_Test_Appointment">Lab Test Appointment</string>
+    <string name="ECG_Test">ECG Test</string>
+    <string name="Available_at">"Available at : "</string>
+    <string name="Date_Needed">Date Needed:</string>
+    <string name="date_month_year">date-month-year</string>
+    <string name="Free_Appointments">Free Appointments:</string>
+    <string name="Book">Book</string>
+
+    <string name="Menu">Menu</string>
+    <string name="Break">---------------</string>
+    <string name="Home">Home</string>
+    <string name="Profile">Profile</string>
+    <string name="BMI_Calculator">BMI Calculator</string>
+    <string name="Step_Counter">Step Counter</string>
+    <string name="Settings">Settings</string>
+    <string name="Sign_Out">Sign Out</string>
+
+    <string name="Medi_Agent">Medi - Agent</string>
+    <string name="Welcome_to_Medi_Agent">Welcome to Medi - Agent</string>
+    <string name="Sign_up_to_create_an_account">Sign-up to create an account</string>
+    <string name="login_to_continue">login to continue</string>
+
+    <string name="ECG_Test1">ECG Test</string>
+    <string name="Patient_Name">"Patient Name : "</string>
+    <string name="John_Watson">John Watson</string>
+    <string name="Age">Age :</string>
+    <string name="age25">25</string>
+    <string name="Test">"Test : "</string>
+    <string name="ECG_Test2">ECG Test</string>
+    <string name="Appointment_No">"Appointment No : "</string>
+    <string name="Date_and_Time">Date and Time :</string>
+    <string name="dt22_10_2022_10_00_AM">22/10/22 10.00 AM</string>
+    <string name="Venue">Venue :</string>
+    <string name="Durdans_Lab_Thalawathugoda">Durdans Lab, Thalawathugoda</string>
+    <string name="pay_now">pay now</string>
+    <string name="cancel_booking">cancel booking</string>
+    <string name="Return_to_home">Return to home</string>
+
+    <array name = "location">
+        <item>""</item>
+        <item> Colombo </item>
+        <item> Negombo </item>
+        <item> Kaduwela </item>
+        <item> Kandy </item>
+    </array>
+
+    <array name = "time">
+        <item>""</item>
+        <item> 10.30 A.M </item>
+        <item> 1.30 P.M </item>
+        <item> 3.30 P.M </item>
+        <item> 6.00 P.M </item>
+    </array>
+
+</resources>
