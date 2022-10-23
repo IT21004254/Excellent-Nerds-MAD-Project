@@ -97,22 +97,22 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this,"Please Enter Date", Toast.LENGTH_LONG).show();
                 }
-                if(TextUtils.isEmpty((CharSequence) Time.getSelectedItem().toString()))
+                else if(TextUtils.isEmpty((CharSequence) Time.getSelectedItem().toString()))
                 {
                     Toast.makeText(MainActivity.this,"Please Enter Time", Toast.LENGTH_LONG).show();
                 }
+                else {
+                    Intent intent = new Intent(MainActivity.this, ECGTest.class);
+                    datepass = date.getText().toString();
+                    timepass = Time.getSelectedItem().toString();
+                    locationpass = Location.getSelectedItem().toString();
+                    intent.putExtra("Value", datepass);
+                    intent.putExtra("TimeValue", timepass);
+                    intent.putExtra("LocationValue", locationpass);
+                    startActivity(intent);
+                    finish();
 
-                Intent intent = new Intent (MainActivity.this,ECGTest.class);
-                datepass = date.getText().toString();
-                timepass = Time.getSelectedItem().toString();
-                locationpass = Location.getSelectedItem().toString();
-                intent.putExtra("Value",datepass);
-                intent.putExtra("TimeValue",timepass);
-                intent.putExtra("LocationValue",locationpass);
-                startActivity(intent);
-                finish();
-
-
+                }
 
             }
     });

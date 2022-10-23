@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/returnhome"
         android:layout_width="123dp"
         android:layout_height="70dp"
         android:layout_marginTop="484dp"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/cancel"
         android:layout_width="123dp"
         android:layout_height="70dp"
         android:layout_marginTop="484dp"
