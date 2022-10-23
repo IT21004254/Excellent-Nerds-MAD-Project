@@ -24,9 +24,9 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="280dp"
         android:text="Appointment No : "
         android:textSize="24sp"
         android:textStyle="bold"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/pay"
         android:layout_width="123dp"
         android:layout_height="70dp"
         android:layout_marginTop="484dp"
@@ -112,25 +112,27 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
+        android:layout_marginTop="124dp"
         android:text="Patient Name : "
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
         android:text="Age :"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
@@ -200,7 +202,7 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/PersonName"
         android:layout_width="162dp"
         android:layout_height="42dp"
         android:layout_marginTop="116dp"
@@ -212,7 +214,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/ageECG"
         android:layout_width="78dp"
         android:layout_height="47dp"
         android:layout_marginTop="176dp"
