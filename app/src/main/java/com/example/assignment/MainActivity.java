@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     EditText date;
     Spinner Location,Time;
-    Button book;
+    Button book,check;
     Client client;
     String datepass, timepass, locationpass;
 
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         etDate = findViewById(R.id.et_date);
         book = (Button) findViewById(R.id.book);
+        check = (Button) findViewById(R.id.check);
         date = (EditText)findViewById(R.id.et_date);
         Location = (Spinner) findViewById(R.id.location);
         Time = (Spinner) findViewById(R.id.time);
@@ -117,10 +118,28 @@ public class MainActivity extends AppCompatActivity {
             }
     });
 
+     /*   date = (EditText)findViewById(R.id.et_date);
+        Location = (Spinner) findViewById(R.id.location);
+        Time = (Spinner) findViewById(R.id.time);
+        client = new Client();
+        databaseReference = database.getInstance().getReference().child("Client");
+        book.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view) {
+
+                client.setLocation(Location.getSelectedItem().toString().trim());
+                client.setDate(date.getText().toString().trim());
+                client.setTime(Time.getSelectedItem().toString().trim());
+                databaseReference.push().setValue(client);
+
+                Toast.makeText(MainActivity.this,"Value Stored Sucessfully", Toast.LENGTH_LONG).show();
+            }
+        });
 
 
 
-/*
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,4 +201,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+
 
