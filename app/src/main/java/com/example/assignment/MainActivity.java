@@ -1,13 +1,17 @@
 package com.example.assignment;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,10 +21,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +38,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.auth.User;
 import com.google.firebase.ktx.Firebase;
+
 
 import java.util.Calendar;
 
@@ -46,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
     Button book,check;
     Client client;
     String datepass, timepass, locationpass;
+    DrawerLayout drawerlayout;
+    NavigationView navigationview;
+    Toolbar toolbar;
+    ActionBarDrawerToggle toggle;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -55,10 +66,36 @@ public class MainActivity extends AppCompatActivity {
 
         etDate = findViewById(R.id.et_date);
         book = (Button) findViewById(R.id.book);
-        check = (Button) findViewById(R.id.check);
+        //check = (Button) findViewById(R.id.check);
         date = (EditText)findViewById(R.id.et_date);
         Location = (Spinner) findViewById(R.id.location);
         Time = (Spinner) findViewById(R.id.time);
+
+       drawerlayout = findViewById(R.id.drawerlayout);
+       navigationview = findViewById(R.id.navigationview);
+      toolbar = findViewById(R.id.toolbar);
+
+       // setSupportActionBar(toolbar);
+
+         toggle = new ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.navigration_open,R.string.nagigration_close);
+
+        drawerlayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if(id == R.id.ic_home)
+                {
+                    Toast.makeText(MainActivity.this,"Please Enter Date", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            }
+        });
 
 
 
@@ -200,6 +237,17 @@ public class MainActivity extends AppCompatActivity {
     });*/
 
     }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        return toggle.onOptionsItemSelected(item)||super.onOptionsItemSelected(item);
+    }
+
+
+
 }
 
 

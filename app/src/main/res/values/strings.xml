@@ -66,4 +66,9 @@
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
+
+    <string name = "navigration_open">Open Navigation drawer </string>
+    <string name="nagigration_close">Close Navigation </string>
+
+
 </resources>
