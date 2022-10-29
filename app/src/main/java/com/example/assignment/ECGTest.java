@@ -111,7 +111,7 @@ public class ECGTest extends AppCompatActivity {
                 Toast.makeText(ECGTest.this,"Values Stored Sucessfully", Toast.LENGTH_LONG).show();
 
             }
-            
+
 
             databaseReference12.push().setValue(client1);
         }

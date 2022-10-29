@@ -13,25 +13,22 @@
     android:fitsSystemWindows="true"
     tools:openDrawer = "start">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/navigationview"
-        app:headerLayout="@layout/header"
-        app:menu = "@menu/sidemenu"
-        android:layout_gravity = "start"/>
 
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id = "@+id/toolbar"
         android:layout_width = "match_parent"
         android:layout_height="wrap_content"
         android:background = "#6200ee"
-        app:title = "Medi - Care"
+        app:title = "Medi - Agent"
         app:titleTextColor = "#FFFFFF"
         app:titleMarginStart = "10dp"
         android:layout_marginBottom="5dp"
@@ -160,6 +157,13 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationview"
+        app:headerLayout="@layout/header"
+        app:menu = "@menu/sidemenu"
+        android:layout_gravity = "start"/>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

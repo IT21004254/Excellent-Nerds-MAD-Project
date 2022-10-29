@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
@@ -11,6 +12,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,7 +48,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     EditText etDate;
     EditText Date1;
     DatePickerDialog.OnDateSetListener setListener;
@@ -83,9 +85,11 @@ public class MainActivity extends AppCompatActivity {
        drawerlayout = findViewById(R.id.drawerlayout);
       navigationview = findViewById(R.id.navigationview);
 
+      //navigationview.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
+
       toolbar = findViewById(R.id.toolbar);
 
-      // setSupportActionBar(toolbar);
+       setSupportActionBar(toolbar);
 
         toggle = new ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.navigration_open,R.string.nagigration_close);
 
@@ -94,6 +98,51 @@ public class MainActivity extends AppCompatActivity {
         drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
+
+        navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.ic_home) {
+                    Intent intent = new Intent (MainActivity.this,WelcomePage.class);
+                    startActivity(intent);
+                    return true;
+                }
+                if (id == R.id.profile) {
+                    Intent intent1 = new Intent (MainActivity.this,WelcomePage.class);
+                    startActivity(intent1);
+                    return true;
+                }
+
+                if (id == R.id.ic_BMI) {
+                    Intent intent2 = new Intent (MainActivity.this,WelcomePage.class);
+                    startActivity(intent2);
+                    return true;
+                }
+
+                if (id == R.id.ic_step) {
+                    Intent intent3 = new Intent (MainActivity.this,WelcomePage.class);
+                    startActivity(intent3);
+                    return true;
+                }
+                if (id == R.id.ic_Settings) {
+                    Intent intent4 = new Intent (MainActivity.this,WelcomePage.class);
+                    startActivity(intent4);
+                    return true;
+                }
+                if (id == R.id.ic_signout) {
+                    Intent intent5 = new Intent (MainActivity.this,WelcomePage.class);
+                    startActivity(intent5);
+                    return true;
+                }
+
+                return false;
+
+
+            }
+        });
         //navigationview.setNavigationItemSelectedListener();
         Calendar calender = Calendar.getInstance();
         final int year = calender.get(Calendar.YEAR);
@@ -150,6 +199,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
     });
+
+
 
      /*   date = (EditText)findViewById(R.id.et_date);
         Location = (Spinner) findViewById(R.id.location);
@@ -252,9 +303,11 @@ public class MainActivity extends AppCompatActivity {
         }
     });*/
 
+
+
+
+
     }
-
-
 
 
 }
