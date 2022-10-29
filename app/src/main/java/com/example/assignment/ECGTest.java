@@ -39,7 +39,7 @@ public class ECGTest extends AppCompatActivity {
     private Button pay;
     private String ppname;
     private String ppage;
-    Dialog dialog, dialog1, dialog2;
+    Dialog dialog, dialog1, dialog2, dialog3;
     EditText name,age,pname, page;
     TextView apoint12;
     Button savedata;
@@ -129,8 +129,7 @@ public class ECGTest extends AppCompatActivity {
                     return true;
                 }
                 if (id == R.id.ic_signout) {
-                    Intent intent5 = new Intent (ECGTest.this,WelcomePage.class);
-                    startActivity(intent5);
+                    dialog3.show();
                     return true;
                 }
 
@@ -139,6 +138,8 @@ public class ECGTest extends AppCompatActivity {
 
             }
         });
+
+
 
     int increment_number = 0;
     int val = ++increment_number;
@@ -183,9 +184,36 @@ public class ECGTest extends AppCompatActivity {
         }
     });
 
+        dialog3 = new Dialog(ECGTest.this);
+        dialog3.setContentView(R.layout.custombackgroundsignout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
+            dialog3.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+
+        }
+        dialog3.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog3.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        Button signout = dialog3.findViewById(R.id.btn_okay_signout);
+        Button cancelsign = dialog3.findViewById(R.id.btn_cancel_cancel);
+
+        dialog3.setCancelable(false);
+
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent66 = new Intent (ECGTest.this,WelcomePage.class);
+                startActivity(intent66);
+            }
+        });
+        cancelsign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog3.dismiss();
+            }
+        });
 
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
     {
         dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
     }
