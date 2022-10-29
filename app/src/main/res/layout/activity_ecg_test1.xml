@@ -24,7 +24,7 @@
             android:layout_width = "match_parent"
             android:layout_height="wrap_content"
             android:background = "#6200ee"
-            app:title = "Medi - Care"
+            app:title = "Medi - Agent"
             app:titleTextColor = "#FFFFFF"
             app:titleMarginStart = "10dp"
             android:layout_marginBottom="5dp"
@@ -200,7 +200,7 @@
             android:id="@+id/apoint"
             android:layout_width="165dp"
             android:layout_height="28dp"
-            android:layout_marginTop="316dp"
+            android:layout_marginTop="312dp"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -267,7 +267,6 @@
             app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -275,5 +274,7 @@
         app:headerLayout="@layout/header"
         app:menu = "@menu/sidemenu"
         android:layout_gravity = "start"/>
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
