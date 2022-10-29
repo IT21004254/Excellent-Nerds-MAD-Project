@@ -1,7 +1,9 @@
 package com.example.assignment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Dialog;
@@ -9,6 +11,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -47,6 +50,7 @@ public class ECGTest extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerlayout;
     NavigationView navigationview;
+    Toolbar toolbar;
 
 
     @Override
@@ -73,6 +77,68 @@ public class ECGTest extends AppCompatActivity {
     ppage = page.getText().toString().trim();
     client1 = new Client();
     databaseReference12 = database12.getInstance().getReference().child("Client");
+
+        drawerlayout = findViewById(R.id.drawerlayout);
+        navigationview = findViewById(R.id.navigationview);
+
+        //navigationview.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
+
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        toggle = new ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.navigration_open,R.string.nagigration_close);
+
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        drawerlayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+
+
+        navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.ic_home) {
+                    Intent intent = new Intent (ECGTest.this,WelcomePage.class);
+                    startActivity(intent);
+                    return true;
+                }
+                if (id == R.id.profile) {
+                    Intent intent1 = new Intent (ECGTest.this,WelcomePage.class);
+                    startActivity(intent1);
+                    return true;
+                }
+
+                if (id == R.id.ic_BMI) {
+                    Intent intent2 = new Intent (ECGTest.this,WelcomePage.class);
+                    startActivity(intent2);
+                    return true;
+                }
+
+                if (id == R.id.ic_step) {
+                    Intent intent3 = new Intent (ECGTest.this,WelcomePage.class);
+                    startActivity(intent3);
+                    return true;
+                }
+                if (id == R.id.ic_Settings) {
+                    Intent intent4 = new Intent (ECGTest.this,WelcomePage.class);
+                    startActivity(intent4);
+                    return true;
+                }
+                if (id == R.id.ic_signout) {
+                    Intent intent5 = new Intent (ECGTest.this,WelcomePage.class);
+                    startActivity(intent5);
+                    return true;
+                }
+
+                return false;
+
+
+            }
+        });
 
     int increment_number = 0;
     int val = ++increment_number;
