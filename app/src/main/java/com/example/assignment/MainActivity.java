@@ -162,6 +162,8 @@ public class MainActivity extends AppCompatActivity{
                         etDate.setText(date);
                     }
                 },year,month,day);
+                    //
+                     datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis()-1000);
                     datePickerDialog.show();
             }
         });
