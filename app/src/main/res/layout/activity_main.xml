@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E9EBED"
@@ -25,16 +26,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<androidx.appcompat.widget.Toolbar
-    android:id = "@+id/toolbar"
-    android:layout_width = "match_parent"
-    android:layout_height="wrap_content"
-    android:background = "#6200ee"
-    app:title = "Quick Access"
-    app:titleTextColor = "#FFFFFF"
-    app:titleMarginStart = "10dp"
-    android:layout_marginBottom="5dp"
-    tools:ignore = "MissingConstraints"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id = "@+id/toolbar"
+        android:layout_width = "match_parent"
+        android:layout_height="wrap_content"
+        android:background = "#6200ee"
+        app:title = "Medi - Care"
+        app:titleTextColor = "#FFFFFF"
+        app:titleMarginStart = "10dp"
+        android:layout_marginBottom="5dp"
+        tools:ignore = "MissingConstraints"/>
 
     <TextView
         android:id="@+id/textView6"
@@ -105,7 +106,7 @@
         android:id="@+id/book"
         android:layout_width="232dp"
         android:layout_height="71dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="460dp"
         android:background="#6200ee"
         android:text="Book"
         android:textSize="24sp"

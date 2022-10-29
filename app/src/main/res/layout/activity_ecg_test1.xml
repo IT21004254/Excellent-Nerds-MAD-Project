@@ -77,7 +77,7 @@
         android:id="@+id/returnhome"
         android:layout_width="123dp"
         android:layout_height="70dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="476dp"
         android:background="#6200ee"
         android:text="Return to home"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
         android:id="@+id/cancel"
         android:layout_width="123dp"
         android:layout_height="70dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="476dp"
         android:background="#6200ee"
         android:text="cancel booking"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
         android:id="@+id/pay"
         android:layout_width="123dp"
         android:layout_height="70dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="476dp"
         android:background="#6200ee"
         android:text="pay now"
         app:layout_constraintEnd_toEndOf="parent"
@@ -235,5 +235,18 @@
         app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/savedata"
+        android:layout_width="125dp"
+        android:layout_height="51dp"
+        android:background="#6200ee"
+        android:text="Save Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

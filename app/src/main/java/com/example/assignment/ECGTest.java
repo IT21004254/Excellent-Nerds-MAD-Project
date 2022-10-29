@@ -14,14 +14,33 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 public class ECGTest extends AppCompatActivity {
 
     TextView getdate,gettime,getlocation;
     String datepass,timepass, locationpass;
-    private Button cancelbooking, gotohome, pay;
+    private Button cancelbooking;
+    private Button gotohome;
+    private Button pay;
+    private String ppname;
+    private String ppage;
     Dialog dialog, dialog1, dialog2;
-    EditText name,age;
+    EditText name,age,pname, page;
+    TextView apoint12;
+    Button savedata;
+    List<String> myList;
+    DatabaseReference databaseReference12;
+    FirebaseDatabase database12;
+    Client client1;
 
 
     @Override
@@ -37,9 +56,52 @@ public class ECGTest extends AppCompatActivity {
     getdate.setText(datepass);
     gettime.setText(timepass);
     getlocation.setText(locationpass);
-
+    savedata = (Button) findViewById(R.id.savedata);
+    myList = new ArrayList<>();
     dialog = new Dialog(ECGTest.this);
     dialog.setContentView(R.layout.custombackground);
+    pname = (EditText) findViewById(R.id.PersonName);
+    page = (EditText) findViewById(R.id.ageECG);
+    apoint12 = findViewById(R.id.apoint);
+    ppname = pname.getText().toString().trim();
+    ppage = page.getText().toString().trim();
+    client1 = new Client();
+    databaseReference12 = database12.getInstance().getReference().child("Client");
+
+    int increment_number = 0;
+    int val = ++increment_number;
+    apoint12.setText(Integer.toString(val));
+
+
+    savedata.setOnClickListener(new View.OnClickListener() {
+
+
+        @Override
+        public void onClick(View view) {
+           /* myList.add(ppname);
+            myList.add(ppage);
+            myList.add(locationpass);
+            myList.add(datepass);
+            myList.add(timepass);
+            databaseReference12.setValue(myList);
+*/
+            client1.setName(pname.getText().toString().trim());
+            client1.setAge(page.getText().toString().trim());
+            client1.setAppointmentno(apoint12.getText().toString().trim());
+            client1.setLocation(locationpass);
+            client1.setDate(datepass);
+            client1.setTime(timepass);
+
+
+            Toast.makeText(ECGTest.this,"Values Stored Sucessfully", Toast.LENGTH_LONG).show();
+
+
+            databaseReference12.push().setValue(client1);
+        }
+    });
+
+
+
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
     {
         dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));

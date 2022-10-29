@@ -14,6 +14,8 @@ import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -40,7 +42,9 @@ import com.google.firebase.firestore.auth.User;
 import com.google.firebase.ktx.Firebase;
 
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     EditText etDate;
@@ -52,16 +56,21 @@ public class MainActivity extends AppCompatActivity {
     Spinner Location,Time;
     Button book,check;
     Client client;
-    String datepass, timepass, locationpass;
+    String datepass, timepass, locationpass,location1;
     DrawerLayout drawerlayout;
     NavigationView navigationview;
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
 
+
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         etDate = findViewById(R.id.et_date);
@@ -72,33 +81,20 @@ public class MainActivity extends AppCompatActivity {
         Time = (Spinner) findViewById(R.id.time);
 
        drawerlayout = findViewById(R.id.drawerlayout);
-       navigationview = findViewById(R.id.navigationview);
+      navigationview = findViewById(R.id.navigationview);
+
       toolbar = findViewById(R.id.toolbar);
 
-       // setSupportActionBar(toolbar);
+      // setSupportActionBar(toolbar);
 
-         toggle = new ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.navigration_open,R.string.nagigration_close);
+        toggle = new ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.navigration_open,R.string.nagigration_close);
+
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerlayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        navigationview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                if(id == R.id.ic_home)
-                {
-                    Toast.makeText(MainActivity.this,"Please Enter Date", Toast.LENGTH_LONG).show();
-                }
-                return true;
-            }
-        });
-
-
-
+        //navigationview.setNavigationItemSelectedListener();
         Calendar calender = Calendar.getInstance();
         final int year = calender.get(Calendar.YEAR);
         final int month = calender.get(Calendar.MONTH);
@@ -123,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        book.setOnClickListener(new View.OnClickListener() {
+        book.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -227,24 +223,37 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-           client.setLocation(Location.getSelectedItem().toString().trim());
-            client.setDate(date.getText().toString().trim());
-            client.setTime(Time.getSelectedItem().toString().trim());
-           databaseReference.push().setValue(client);
+       //client.setLocation(Location.getSelectedItem().toString().trim());
+            //client.setDate(date.getText().toString().trim());
+            //client.setTime(Time.getSelectedItem().toString().trim());
+           //databaseReference.push().setValue(client);
+
+            location1 = Location.getSelectedItem().toString();
 
            Toast.makeText(MainActivity.this,"Value Stored Sucessfully", Toast.LENGTH_LONG).show();
+            myList.add(location1);
+            //myList.add("Hi");
+
+            databaseReference.setValue(myList).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                    if(task.isSuccessful())
+                    {
+
+                    }
+
+                }
+            });
+            {
+
+            }
+
         }
     });*/
 
     }
 
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        return toggle.onOptionsItemSelected(item)||super.onOptionsItemSelected(item);
-    }
 
 
 
