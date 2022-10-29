@@ -1,6 +1,8 @@
 package com.example.assignment;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -41,6 +44,9 @@ public class ECGTest extends AppCompatActivity {
     DatabaseReference databaseReference12;
     FirebaseDatabase database12;
     Client client1;
+    ActionBarDrawerToggle toggle;
+    DrawerLayout drawerlayout;
+    NavigationView navigationview;
 
 
     @Override
@@ -85,16 +91,27 @@ public class ECGTest extends AppCompatActivity {
             myList.add(timepass);
             databaseReference12.setValue(myList);
 */
-            client1.setName(pname.getText().toString().trim());
-            client1.setAge(page.getText().toString().trim());
-            client1.setAppointmentno(apoint12.getText().toString().trim());
-            client1.setLocation(locationpass);
-            client1.setDate(datepass);
-            client1.setTime(timepass);
+            if(TextUtils.isEmpty(name.getText().toString()))
+            {
+                Toast.makeText(ECGTest.this,"Please Enter Patient Name", Toast.LENGTH_LONG).show();
+            }
 
+            else if (TextUtils.isEmpty(age.getText().toString()))
+            {
+                Toast.makeText(ECGTest.this,"Please Enter Patient Age", Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                client1.setName(pname.getText().toString().trim());
+                client1.setAge(page.getText().toString().trim());
+                client1.setAppointmentno(apoint12.getText().toString().trim());
+                client1.setLocation(locationpass);
+                client1.setDate(datepass);
+                client1.setTime(timepass);
+                Toast.makeText(ECGTest.this,"Values Stored Sucessfully", Toast.LENGTH_LONG).show();
 
-            Toast.makeText(ECGTest.this,"Values Stored Sucessfully", Toast.LENGTH_LONG).show();
-
+            }
+            
 
             databaseReference12.push().setValue(client1);
         }
