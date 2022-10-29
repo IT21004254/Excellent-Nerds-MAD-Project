@@ -9,13 +9,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity{
     NavigationView navigationview;
     Toolbar toolbar;
     ActionBarDrawerToggle toggle;
+    Dialog dialog;
 
 
 
@@ -81,6 +85,36 @@ public class MainActivity extends AppCompatActivity{
         date = (EditText)findViewById(R.id.et_date);
         Location = (Spinner) findViewById(R.id.location);
         Time = (Spinner) findViewById(R.id.time);
+
+        dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.custombackgroundsignout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
+            dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background));
+
+        }
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        Button signout = dialog.findViewById(R.id.btn_okay_signout);
+        Button cancelsign = dialog.findViewById(R.id.btn_cancel_cancel);
+
+        dialog.setCancelable(false);
+
+        signout.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent66 = new Intent (MainActivity.this,WelcomePage.class);
+                startActivity(intent66);
+            }
+        });
+        cancelsign.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+
 
        drawerlayout = findViewById(R.id.drawerlayout);
       navigationview = findViewById(R.id.navigationview);
@@ -133,8 +167,7 @@ public class MainActivity extends AppCompatActivity{
                     return true;
                 }
                 if (id == R.id.ic_signout) {
-                    Intent intent5 = new Intent (MainActivity.this,WelcomePage.class);
-                    startActivity(intent5);
+                    dialog.show();
                     return true;
                 }
 
