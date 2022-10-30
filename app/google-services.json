@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "924397020718",
+    "firebase_url": "https://auth-25743-default-rtdb.firebaseio.com",
+    "project_id": "auth-25743",
+    "storage_bucket": "auth-25743.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924397020718:android:4b44af5941570666b061bf",
+        "android_client_info": {
+          "package_name": "com.example.medi_agent_mypages"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924397020718-ckpjk5ch7v3epvpsdccr40ijpsm4q7uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgL1kzLWPwdLZMo7oF7vAMa0ojcH9y3Bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924397020718-ckpjk5ch7v3epvpsdccr40ijpsm4q7uo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

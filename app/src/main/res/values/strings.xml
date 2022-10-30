@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Medi-Agent - My Pages</string>
+    <string name="RegisterUserTitle">Medi-Agent</string>
+    <string name="Lab_Test_Appointment">Lab Test Appointment</string>
+    <string name="ECG_Test">ECG Test</string>
+    <string name="Available_at">"Available at : "</string>
+    <string name="Date_Needed">Date Needed:</string>
+    <string name="date_month_year">date-month-year</string>
+    <string name="Free_Appointments">Free Appointments:</string>
+    <string name="Book">Book</string>
+
+    <string name="Menu">Menu</string>
+    <string name="Break">---------------</string>
+    <string name="Home">Home</string>
+    <string name="Profile">Profile</string>
+    <string name="BMI_Calculator">BMI Calculator</string>
+    <string name="Step_Counter">Step Counter</string>
+    <string name="Settings">Settings</string>
+    <string name="Sign_Out">Sign Out</string>
+
+    <string name="Medi_Agent">Medi - Agent</string>
+    <string name="Welcome_to_Medi_Agent">Welcome to Medi - Agent</string>
+    <string name="Sign_up_to_create_an_account">Sign-up to create an account</string>
+    <string name="login_to_continue">login to continue</string>
+
+    <string name="ECG_Test1">ECG Test</string>
+    <string name="Patient_Name">"Patient Name : "</string>
+    <string name="John_Watson">John Watson</string>
+    <string name="Age">Age :</string>
+    <string name="age25">25</string>
+    <string name="Test">"Test : "</string>
+    <string name="ECG_Test2">ECG Test</string>
+    <string name="Appointment_No">"Appointment No : "</string>
+    <string name="Date_and_Time">Date and Time :</string>
+    <string name="dt22_10_2022_10_00_AM">22/10/22 10.00 AM</string>
+    <string name="Venue">Venue :</string>
+    <string name="Durdans_Lab_Thalawathugoda">Durdans Lab, Thalawathugoda</string>
+    <string name="pay_now">pay now</string>
+    <string name="cancel_booking">cancel booking</string>
+    <string name="Return_to_home">Return to home</string>
+
+    <array name="location">
+        <item>""</item>
+        <item>Colombo</item>
+        <item>Negombo</item>
+        <item>Kaduwela</item>
+        <item>Kandy</item>
+    </array>
+
+    <array name="time">
+        <item>""</item>
+        <item>10.30 A.M</item>
+        <item>1.30 P.M</item>
+        <item>3.30 P.M</item>
+        <item>6.00 P.M</item>
+    </array>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowAnimationStyle">@style/DialogAnimation
+        </item> <!--custom animation style-->
+    </style>
+
+    <!-- Base application theme. -->
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <string name="navigration_open">Open Navigation drawer </string>
+    <string name="nagigration_close">Close Navigation </string>
+    <string name="save_data">Save Data</string>
+    <string name="signuptitle">Sign Up</string>
+    <string name="register_userbtn">Register User</string>
+    <string name="SignUp_full_name">Full Name</string>
+    <string name="SignUp_date_of_birth">Date of Birth</string>
+    <string name="SignUp_email">Email</string>
+    <string name="SignUp_password">Password</string>
+    <string name="lblLogin">Login</string>
+    <string name="loginsubtitle">Login</string>
+    <string name="LoginPagesign_up">Sign Up</string>
+    <string name="LoginPageforgot_password">Forgot Password?</string>
+    <string name="LoginPageenter_email_address">Enter Email Address</string>
+    <string name="LoginPageenter_password">Enter Password</string>
+    <string name="loginpageimg">LoginPageImg</string>
+    <string name="signuppageimg">SignupPageImg</string>
+    <string name="lblforgotPasswordsubtitle">Forgot Password</string>
+    <string name="reset_passwordlbl">Reset Password</string>
+    <string name="ResetPasswordPagego_back">Go Back</string>
+    <string name="ResetPasswordenter_email_address">Enter Email Address</string>
+    <string name="calculate_bmi">Calculate BMI</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="your_category">Your Category :</string>
+    <string name="your_bmi_score">Your BMI Score :</string>
+    <string name="enter_height_cm">Enter Height (CM)</string>
+    <string name="enter_weight_kg">Enter Weight (Kg)</string>
+</resources>

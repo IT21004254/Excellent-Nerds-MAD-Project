@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundColor"
+    tools:context=".BMIcalculator">
+
+    <EditText
+        android:id="@+id/tbBMIheight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="132dp"
+        android:autofillHints=""
+        android:background="@color/EditTextColor"
+        android:ems="10"
+        android:hint="@string/enter_height_cm"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tbBMIweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:autofillHints=""
+        android:background="@color/EditTextColor"
+        android:ems="10"
+        android:hint="@string/enter_weight_kg"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbBMIheight" />
+
+    <Button
+        android:id="@+id/btnBMIcalcbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/calculate_bmi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbBMIweight" />
+
+    <TextView
+        android:id="@+id/lblBMIcalcTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/bmi_calculator"
+        android:textColor="@color/TitleTextColor"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblBMIscoreprint"
+        android:layout_width="55dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblBMIscore" />
+
+    <TextView
+        android:id="@+id/lblBMIscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/your_bmi_score"
+        android:textColor="@color/TitleTextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBMIcalcbutton" />
+
+    <TextView
+        android:id="@+id/lblBMIcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/your_category"
+        android:textColor="@color/TitleTextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblBMIscoreprint" />
+
+    <TextView
+        android:id="@+id/lblBMIcategoryprint"
+        android:layout_width="61dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="44dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblBMIcategory" />
+</androidx.constraintlayout.widget.ConstraintLayout>
