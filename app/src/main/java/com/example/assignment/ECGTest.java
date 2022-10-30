@@ -355,7 +355,7 @@ public class ECGTest extends AppCompatActivity {
                 }
                 else
                 {
-                    dialog1.show();
+                    dialog2.show();
 
                 }
             }
