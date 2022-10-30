@@ -144,6 +144,10 @@ public class MainActivity extends AppCompatActivity{
                     startActivity(intent);
                     return true;
                 }
+
+
+
+
                 if (id == R.id.profile) {
                     Intent intent1 = new Intent (MainActivity.this,WelcomePage.class);
                     startActivity(intent1);
