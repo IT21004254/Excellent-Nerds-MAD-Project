@@ -7,6 +7,18 @@
     android:background="#E9EBED"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id = "@+id/toolbar"
+        android:layout_width = "match_parent"
+        android:layout_height="wrap_content"
+        android:background = "#6200ee"
+        app:title = "Medi - Agent"
+        app:titleTextColor = "#FFFFFF"
+        app:titleMarginStart = "10dp"
+        android:layout_marginBottom="5dp"
+        tools:ignore = "MissingConstraints"/>
+
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
