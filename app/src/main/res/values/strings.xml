@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MediAgent</string>
+    <string name="search">Search</string>
+    <string name="err_tel">Enter the Valid Number</string>
+</resources>
